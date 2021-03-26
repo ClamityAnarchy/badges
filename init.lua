@@ -154,8 +154,6 @@ function badges.set_badge(player, badge)
 	if registered[badge] then
 		-- Set attribute
 		player:set_attribute("badges:badge", badge)
-		-- Update nametag
-		badges.update_nametag(player)
 		-- Update privileges
 		badges.update_privs(player)
 
@@ -175,11 +173,6 @@ function badges.remove_badge(player)
 
 		-- Clear attribute
 		player:set_attribute("badges:badge", nil)
-		-- Update nametag
-		player:set_nametag_attributes({
-			text = name,
-			color = "#ffffff",
-		})
 		-- Update privileges
 		local basic_privs =
 			minetest.string_to_privs(minetest.settings:get("basic_privs") or "interact,shout")
@@ -218,8 +211,6 @@ minetest.register_privilege("badge", {
 -- Assign/update badge on join player
 minetest.register_on_joinplayer(function(player)
 	if badges.get_badge(player) then
-		-- Update nametag
-		badges.update_nametag(player)
 		-- Update privileges
 		badges.update_privs(player)
 	else
