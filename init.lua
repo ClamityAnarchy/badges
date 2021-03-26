@@ -200,6 +200,8 @@ function badges.chat_send(name, message)
 				return true
 			end
 		end
+		discord.chat_send_all("<"..name..">: "..message)
+		return true
 	end
 end
 
