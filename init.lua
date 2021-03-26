@@ -189,7 +189,7 @@ function badges.chat_send(name, message)
 			if def.prefix then
 				local colour = get_colour(def.colour)
 				local prefix = minetest.colorize(colour, def.prefix)
-				discord.chat_send_all(prefix.." <"..name.."> "..message)
+				discord.chat_send_all(prefix.." <"..name..">: "..message)
 				return true
 			end
 		end
