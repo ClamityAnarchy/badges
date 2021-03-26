@@ -1,0 +1,3 @@
+#    If this is enabled, chat send by a player with a badge including a defined
+#    prefix is prefixed with the badge prefix.
+badges.prefix_chat (Prefix Chat) bool true
