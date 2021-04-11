@@ -5,6 +5,12 @@ badges = {}
 local registered   = {}
 local default
 
+local chat_send_all = minetest.chat_send_all
+
+if rawget(_G, "discord") then
+	chat_send_all = discord.chat_send_all
+end
+
 ---
 --- API
 ---
@@ -189,11 +195,11 @@ function badges.chat_send(name, message)
 			if def.prefix then
 				local colour = get_colour(def.colour)
 				local prefix = minetest.colorize(colour, def.prefix)
-				discord.chat_send_all(prefix.." <"..name..">: "..message)
+				chat_send_all(prefix.." <"..name..">: "..message)
 				return true
 			end
 		end
-		discord.chat_send_all("<"..name..">: "..message)
+		chat_send_all("<"..name..">: "..message)
 		return true
 	end
 end
