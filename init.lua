@@ -340,3 +340,5 @@ local path = minetest.get_worldpath().."/badges.lua"
 if io.open(path) then
 	dofile(path)
 end
+
+dofile(minetest.get_modpath("badges") .. "/bossbar.lua")
