@@ -227,9 +227,9 @@ minetest.register_on_joinplayer(function(player)
 end)
 
 -- Prefix messages if enabled
-minetest.register_on_chat_message(function(name, message)
-	return badges.chat_send(name, message)
-end)
+--minetest.register_on_chat_message(function(name, message)
+--	return badges.chat_send(name, message)
+--end)
 
 -- [chatcommand] /badge
 minetest.register_chatcommand("badge", {
